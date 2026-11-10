@@ -1,3 +1,34 @@
+# Dio.Bootcamp.BancoPan.DesafioPooDio
+
+Exercício Java para modelagem de bootcamp, cursos, mentorias, estudantes e princípios de orientação a objetos.
+
+## Tecnologias e dependências
+
+Java, classes sob src/src, sem projeto Maven na raiz.
+
+JDK e shell apropriados; comando deve ser ajustado ao layout conforme seu sistema operacional.
+
+## Como executar
+
+```bash
+javac -encoding UTF-8 -d saida src/src/br/com/dio/desafio/dominio/*.java src/src/Main.java
+java -cp saida Main
+```
+
+## Mapa do projeto
+
+- [Requisitos](docs/REQUISITOS.md)
+- [Arquitetura](docs/ARQUITETURA.md)
+- [UML](docs/UML.puml)
+- [Testes](docs/PLANO_TESTES.md)
+- [Orientações para ferramentas de IA](AGENTS.md)
+
+**Condição:** projeto didático. Exercício de console: não existe endpoint HTTP nem deployment de produção.
+
+---
+
+## Documentação original preservada
+
 <h1> Desafio: Aprenda na Prática Programação Orientada a Objetos</h1>
 
 <p align="center"> 📜 <a href="https://academiapme-my.sharepoint.com/:p:/g/personal/camila_cavalcante_dio_me/EaXyYOjBaFpZjkxhexMo5EcBKMEEAI5t5aHlsTjnBQJlUw?e=nxdB6C"> SLIDES APRESENTADO NO PROJETO </a> 📜 </P>
@@ -22,7 +53,7 @@
 <p>
 <strong>	1.</strong> Vamos ABSTRAIR o DOMÍNIO Bootcamp e MODELAR seus ATRIBUTOS E MÉTODOS <br>
 <strong>	2.</strong> Criaremos as CLASSES: Bootcamp, Cursos, Mentorias e Devs e vamos relaciona-las <br>
-<strong>	3.</strong> As CLASSES Curso, Mentoria e Devs também serão MODELADOS, ou seja, criaremos seus ATRIBUTOS E MÉTODOS <br> 
+<strong>	3.</strong> As CLASSES Curso, Mentoria e Devs também serão MODELADOS, ou seja, criaremos seus ATRIBUTOS E MÉTODOS <br>
 <strong>	4.</strong> Para que o código fique mais legível e de fácil manutenção, iremos utilizar de algumas das ferramentas que o PARADIGMA DE ORIENTAÇÃO A OBJETOS (POO) nos oferece: ABSTRAÇÃO, ENCAPSULAMENTO, HERANÇA E POLIMORFISMO <br>
 <strong>	5.</strong> E para representar CLASSES que foram criadas e relacionadas, iremos transforma-las em OBJETOS<br>
 </p>
@@ -34,7 +65,7 @@
 <p>
 A visão de Orientação a Objetos (OO) é aquela de um mundo de objetos que interagem.<br>
 Este paradigma é um modelo de análise, projeto e programação baseado na aproximação entre o mundo real e o mundo virtual, através da criação e interação entre classes, atributos, métodos, objetos, entre outros.<br>
-São 4 os pilares principais do POO: ABSTRAÇÃO, ENCAPSULAMENTO, HERANÇA E POLIMORFISMO. 
+São 4 os pilares principais do POO: ABSTRAÇÃO, ENCAPSULAMENTO, HERANÇA E POLIMORFISMO.
 </p>
 
 
@@ -57,14 +88,14 @@ Habilidade de concentrar-se nos aspectos essenciais de um domínio, ignorando ca
 <br>
 <h2 align="center"> ‼️ CONCEITOS FUNDAMENTAIS POO ‼️ </h2>
 <p>
-<h3>🔻 DOMÍNIO:</h3> 
+<h3>🔻 DOMÍNIO:</h3>
 Domínio da aplicação, também conhecida como camada de negócio ou de objetos de negócio, é aquela onde estão localizadas as classes que fazem parte do domínio do problema, ou seja, classes correspondentes a objetos que fazem parte da descrição do problema.
 
-<h3>🔻 CLASSE: </h3> 
+<h3>🔻 CLASSE: </h3>
 Um elemento do código que tem a função de representar objetos do mundo real. Dentro dela é comum declararmos atributos e métodos, que representam, respectivamente, as características e comportamentos desse objeto.
 
 <h3>🔻 ATRIBUTO: </h3>
-Atributos são, basicamente, a estrutura de dados que vai representar a classe. Os atributos também são conhecidos como VARIÁVEL DE CLASSE, e podem ser divididos em dois tipos básicos: atributos de instância e de classe. 
+Atributos são, basicamente, a estrutura de dados que vai representar a classe. Os atributos também são conhecidos como VARIÁVEL DE CLASSE, e podem ser divididos em dois tipos básicos: atributos de instância e de classe.
 
 <h3>🔻 VARIÁVEL: </h3>
 Uma “região de memória (do computador) previamente identificada cuja finalidade é armazenar os dados ou informações de um programa por um determinado espaço de tempo”.
@@ -74,20 +105,20 @@ Os métodos representam os estados e ações dos objetos e classes.
 
 <h3>🔻 OBJETO: </h3>
 Em POO, objeto é um "molde" de uma determinada classe, que passa a existir a partir de uma instância da classe. A classe define o comportamento do objeto, usando atributos (propriedades) e métodos (ações).
-Objeto em ciência da computação, é uma referência a um local da memória que possui um valor. Um objeto pode ser uma variável, função, ou estrutura de dados. 
+Objeto em ciência da computação, é uma referência a um local da memória que possui um valor. Um objeto pode ser uma variável, função, ou estrutura de dados.
 
 <h3>🔻 INSTÂNCIA: </h3>
 Uma instância de uma classe é um novo objeto criado dessa classe, com o operador new. Instanciar uma classe é criar um novo objeto do mesmo tipo dessa classe. Uma classe somente poderá ser utilizada após ser instanciada.
 
 </p>
-    
+
 ------------
 <br>
 
 <h2> 🧮 Linguagem de Programação vs Paradigma de Linguagem de Programação</h2>
 
 <p>
-<h3> ✨ LINGUAGEM DE PROGRAMAÇÃO:</h3> 
+<h3> ✨ LINGUAGEM DE PROGRAMAÇÃO:</h3>
 É uma linguagem formal que, através de uma série de instruções, permite que um programador escreva um conjunto de ordens, ações consecutivas, dados e algoritmos para criar programas que controlam o comportamento físico e lógico de uma máquina.<br>
 Seguem alguns exemplos de como as linguagens de programação podem ser classificadas:<br>
 <br>
@@ -112,7 +143,7 @@ Linguagens Interpretadas: Python, Ruby, PHP, Javascript, etc.<br>
 Linguagens Hibridas: Java, Erlang, Elixir, etc.<br>
 
 
-<h3> ✨ PARADIGMA DE LINGUAGEM DE PROGRAMAÇÃO</h3> 
+<h3> ✨ PARADIGMA DE LINGUAGEM DE PROGRAMAÇÃO</h3>
 
 É um conjunto de características que podem ser utilizados para categorizar determinado grupo de linguagens. Um paradigma pode oferecer técnicas apropriadas para uma aplicação específica.<br>
 <br>
