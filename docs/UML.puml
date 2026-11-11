@@ -1,17 +1,12 @@
 @startuml
-title Dio.Bootcamp.BancoPan.DesafioPooDio — visão lógica
-actor Participante
-component "Entrada / execução" as Entrada
-component "Serviço / domínio" as Dominio
-component "Bootcamp" as Componente
-component "Repositório ou adaptador" as Repositorio
-Participante --> Entrada
-Entrada --> Dominio
-Dominio --> Componente
-Componente --> Repositorio : se aplicável
-note right of Componente
-Visão didática e conceitual.
-A implementação deve ser conferida
-nos arquivos Java existentes.
-end note
+abstract class Conteudo { XP_PADRAO=10; titulo; descricao; calcularXp() }
+class Curso { cargaHoraria; calcularXp() }
+class Mentoria { data; calcularXp() }
+class Bootcamp { nome; descricao; conteudos; devsInscritos }
+class Dev { Nome; conteudosInscritos; conteudosConcluidos; inscreverBootcamp(); progredir(); calcularTotalXp() }
+Conteudo <|-- Curso
+Conteudo <|-- Mentoria
+Bootcamp "1" o-- "*" Conteudo
+Bootcamp "*" -- "*" Dev : inscritos
+Dev "1" o-- "*" Conteudo : inscritos/concluidos
 @enduml
