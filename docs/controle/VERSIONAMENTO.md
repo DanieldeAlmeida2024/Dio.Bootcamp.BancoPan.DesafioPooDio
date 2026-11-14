@@ -11,3 +11,7 @@
 | Dio.Bootcamp.BancoPan.DesafioPooDio-TST | [Plano de testes](../testes/PLANO_DE_TESTES.md) | 1.0.0 |
 
 MAJOR: quebra de contrato/regra; MINOR: caso de uso ou cobertura nova; PATCH: documentação. Para cada alteração, relacionar ID do teste, diagrama e commit e atualizar o histórico antes do merge.
+
+## Reconciliação de documentação — 14/11/2026
+
+Especificação, matriz de casos e UML preservados da branch original de 11/11, sem alterar o código e os testes já integrados à `main`. Os documentos históricos não são evidência atual de testes; consultar o plano vigente e GitHub Actions.
