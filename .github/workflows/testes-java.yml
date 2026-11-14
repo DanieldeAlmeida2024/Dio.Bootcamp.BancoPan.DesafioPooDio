@@ -1,0 +1,22 @@
+name: Java - domínio Bootcamp
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  dominio:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Compilar fontes sem Maven
+        run: |
+          mkdir -p saida
+          javac -encoding UTF-8 -d saida src/src/br/com/dio/desafio/dominio/*.java src/src/Main.java tests/TestesDominio.java
+      - name: Testar contratos do domínio
+        run: java -cp saida TestesDominio
