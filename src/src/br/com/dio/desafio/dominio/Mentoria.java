@@ -10,8 +10,10 @@ public class Mentoria extends Conteudo{
     }
 
     public Mentoria(String titulo, String descricao, int cargaHoraria, LocalDate data) {
-        this.cargaHoraria = cargaHoraria;
-        this.data = LocalDate.now();
+        setTitulo(titulo);
+        setDescricao(descricao);
+        setCargaHoraria(cargaHoraria);
+        setData(data);
     }
 
     @Override
@@ -25,6 +27,7 @@ public class Mentoria extends Conteudo{
     }
 
     public void setCargaHoraria(int cargaHoraria) {
+        if (cargaHoraria <= 0) throw new IllegalArgumentException("Carga horária deve ser positiva");
         this.cargaHoraria = cargaHoraria;
     }
 
@@ -33,7 +36,7 @@ public class Mentoria extends Conteudo{
     }
 
     public void setData(LocalDate data) {
-        this.data = data;
+        this.data = java.util.Objects.requireNonNull(data, "Data da mentoria obrigatória");
     }
 
     @Override
