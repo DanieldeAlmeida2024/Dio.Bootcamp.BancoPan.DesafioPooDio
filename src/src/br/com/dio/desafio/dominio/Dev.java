@@ -1,8 +1,8 @@
 package br.com.dio.desafio.dominio;
 
 import java.util.LinkedHashSet;
-import java.util.Objects;
 import java.util.Optional;
+// Identidade de Dev é a própria instância: coleções de progresso são mutáveis.
 import java.util.Set;
 
 public class Dev {
@@ -51,17 +51,5 @@ public class Dev {
 
     public void setConteudosConcluidos(Set<Conteudo> conteudosConcluidos) {
         this.conteudosConcluidos = conteudosConcluidos;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Dev dev = (Dev) o;
-        return Objects.equals(Nome, dev.Nome) && Objects.equals(conteudosInscritos, dev.conteudosInscritos) && Objects.equals(conteudosConcluidos, dev.conteudosConcluidos);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(Nome, conteudosInscritos, conteudosConcluidos);
     }
 }
