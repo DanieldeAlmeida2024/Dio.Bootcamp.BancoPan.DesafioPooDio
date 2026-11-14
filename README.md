@@ -31,3 +31,9 @@ O último comando verifica os construtores, o cálculo de XP e a permanência da
 O desafio-base e seu enunciado são da **DIO e seus instrutores**. Este repositório reúne a implementação do exercício e melhorias de manutenção/testes; não reivindica a criação do desafio. O [material original foi mantido para consulta](docs/referencia/MATERIAL_ORIGINAL_DIO.md).
 
 **Documentação:** [Requisitos](docs/REQUISITOS.md) · [Arquitetura](docs/ARQUITETURA.md) · [UML](docs/UML.puml) · [Plano de testes](docs/PLANO_TESTES.md)
+
+## Documentação específica do domínio
+
+[Especificação da implementação](docs/projeto/ESPECIFICACAO.md) · [Modelo e sequências UML](docs/uml/README.md) · [Matriz de testes histórica](docs/testes/PLANO_DE_TESTES.md) · [Histórico documental](docs/controle/VERSIONAMENTO.md).
+
+Esses arquivos preservam a modelagem original do exercício; as verificações executadas e os requisitos atuais estão no [plano de testes vigente](docs/PLANO_TESTES.md) e nas execuções do GitHub Actions.
