@@ -19,7 +19,7 @@ java -cp saida TestesDominio
 
 O último comando verifica os construtores, o cálculo de XP e a permanência da inscrição mesmo depois da progressão do aluno. Os mesmos testes rodam no GitHub Actions em Java 17.
 
-## Ajustes nesta versão
+## Regras de domínio e execução
 
 - Os construtores de `Curso` e `Mentoria` agora utilizam os argumentos recebidos.
 - Cargas horárias inválidas são rejeitadas.
