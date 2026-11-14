@@ -1,0 +1,18 @@
+@startuml
+actor Aluno
+participant Dev
+participant Bootcamp
+collections "LinkedHashSet Conteudo" as In
+collections "LinkedHashSet Concluido" as Out
+Aluno -> Dev : inscreverBootcamp(bootcamp)
+Dev -> Bootcamp : getConteudos()
+Dev -> In : addAll()
+Aluno -> Dev : progredir()
+Dev -> In : findFirst()
+alt conteúdo existente
+Dev -> Out : add(conteudo)
+Dev -> In : remove(conteudo)
+else sem conteúdo
+Dev --> Aluno : aviso em stderr
+end
+@enduml
