@@ -53,6 +53,25 @@ public final class TestesDominio {
             "Inscrição deve persistir depois de concluir todos os itens");
         verificar(aluno.getConteudosConcluidos().size() == 2, "Dois itens deveriam estar concluídos");
         verificar(aluno.calcularTotalXp() == 90.0, "XP total incorreto");
+        aluno.inscreverBootcamp(bootcamp);
+        verificar(aluno.getConteudosInscritos().isEmpty(),
+            "Reinscrição não pode reabrir conteúdo já concluído");
+        verificar(aluno.getConteudosConcluidos().size() == 2,
+            "Reinscrição não deve apagar ou duplicar progresso");
+        verificar(aluno.calcularTotalXp() == 90.0, "XP não pode mudar após reinscrição");
+        aluno.inscreverBootcamp(bootcamp);
+        verificar(aluno.getConteudosInscritos().isEmpty(), "Inscrição repetida deve ser idempotente");
+        rejeitar(() -> aluno.inscreverBootcamp(null), "Bootcamp nulo não pode causar NPE");
+
+        Curso novo = new Curso("Tópico novo", "Adicionado ao cronograma", 3);
+        bootcamp.getConteudos().add(novo);
+        aluno.inscreverBootcamp(bootcamp);
+        verificar(aluno.getConteudosInscritos().size() == 1 &&
+            aluno.getConteudosInscritos().contains(novo),
+            "Reinscrever com conteúdo novo só deve adicionar a tarefa inédita");
+        aluno.progredir();
+        verificar(aluno.calcularTotalXp() == 120.0,
+            "Somente o conteúdo novo deve acrescentar XP");
 
         System.out.println("Testes do domínio Bootcamp: PASS");
     }

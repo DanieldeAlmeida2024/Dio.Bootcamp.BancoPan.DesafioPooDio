@@ -11,7 +11,20 @@ public class Dev {
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
     public void inscreverBootcamp (Bootcamp bootcamp) {
-        this.conteudosInscritos.addAll(bootcamp.getConteudos());
+        if (bootcamp == null || bootcamp.getConteudos() == null ||
+            bootcamp.getDevsInscritos() == null) {
+            throw new IllegalArgumentException("Bootcamp e suas coleções são obrigatórios");
+        }
+        // Reinscrição não transforma conteúdo já concluído em tarefa pendente.
+        // Mantém a ordem dos conteúdos e o progresso do mesmo Dev.
+        for (Conteudo conteudo : bootcamp.getConteudos()) {
+            if (conteudo == null) {
+                throw new IllegalArgumentException("Conteúdo do bootcamp não pode ser nulo");
+            }
+            if (!conteudosConcluidos.contains(conteudo)) {
+                conteudosInscritos.add(conteudo);
+            }
+        }
         bootcamp.getDevsInscritos().add(this);
     }
     public void progredir () {
